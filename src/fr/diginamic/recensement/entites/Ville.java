@@ -1,7 +1,7 @@
 package fr.diginamic.recensement.entites;
 
 /**
- * Classe Ville instaciable afin de cr�er un objet de type Ville
+ * Classe Ville instaciable afin de cr�er un objet de type Ville
  * 
  * @author anton
  *
@@ -39,9 +39,7 @@ public class Ville {
 
 	@Override
 	public String toString() {
-		return "Ville [codeRegion=" + codeRegion + ", nomRegion=" + nomRegion + ", codeDepartement=" + codeDepartement
-				+ ", codeCommune=" + codeCommune + ", nomCommune=" + nomCommune + ", populationTotale="
-				+ populationTotale + "]";
+		return "Département n°" + codeDepartement + " - Ville : " + nomCommune + " - " + populationTotale + " hab.";
 	}
 
 	/**

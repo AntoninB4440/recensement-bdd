@@ -1,14 +1,9 @@
 package fr.diginamic.recensement;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
 import java.util.Scanner;
 
 import fr.diginamic.recensement.entites.Recensement;
-import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.MenuService;
 import fr.diginamic.recensement.services.classement.ClassementDepartementPopulation;
 import fr.diginamic.recensement.services.classement.ClassementRegionPopulation;
@@ -20,8 +15,8 @@ import fr.diginamic.recensement.services.recherche.RecherchePopulationRegion;
 import fr.diginamic.recensement.services.recherche.RecherchePopulationVille;
 
 /**
- * Classe de démarrage de l'application pour la recherche et l'affichage des
- * populations suivant les villes/regions/département
+ * Classe de dï¿½marrage de l'application pour la recherche et l'affichage des
+ * populations suivant les villes/regions/dï¿½partement
  * 
  * @author anton
  *
@@ -32,29 +27,6 @@ public class Application {
 		// TODO Auto-generated method stub
 
 		Recensement recensement = new Recensement();
-
-		// Lecture du fichier recensement.csv
-		Path pathRecensement = Paths.get(
-				"C:\\Users\\anton\\OneDrive\\Desktop\\COURS_DIGINAMIC\\Java\\Cours\\Java_approche_objet\\J7&J8_TP\\recensement.csv");
-
-		List<String> linesFile = Files.readAllLines(pathRecensement);
-
-		linesFile.remove(0);
-		for (String lineFile : linesFile) {
-			String[] villeInfo = lineFile.split(";");
-			String codeRegion = villeInfo[0];
-			String nomRegion = villeInfo[1];
-			String codeDepartement = villeInfo[2];
-			String codeCommune = villeInfo[5];
-			String nomCommune = villeInfo[6];
-			int populationTotale = Integer.parseInt(villeInfo[9].replace(" ", "").trim());
-
-			Ville ville = new Ville(codeRegion, nomRegion, codeDepartement, codeCommune, nomCommune, populationTotale);
-
-			recensement.getVilles().add(ville);
-		}
-
-		System.out.println(recensement.getVilles().size());
 
 		Scanner scanner = new Scanner(System.in);
 		int userChoice = 0;
