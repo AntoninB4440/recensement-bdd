@@ -3,7 +3,6 @@ package fr.diginamic.recensement;
 import java.io.IOException;
 import java.util.Scanner;
 
-import fr.diginamic.recensement.entites.Recensement;
 import fr.diginamic.recensement.services.MenuService;
 import fr.diginamic.recensement.services.classement.ClassementDepartementPopulation;
 import fr.diginamic.recensement.services.classement.ClassementRegionPopulation;
@@ -26,8 +25,6 @@ public class Application {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		Recensement recensement = new Recensement();
-
 		Scanner scanner = new Scanner(System.in);
 		int userChoice = 0;
 
@@ -37,35 +34,35 @@ public class Application {
 			switch (userChoice) {
 			case 1:
 				RecherchePopulationVille recherche = new RecherchePopulationVille();
-				recherche.traiter(recensement, scanner);
+				recherche.traiter(scanner);
 				break;
 			case 2:
 				RecherchePopulationDepartement recherche1 = new RecherchePopulationDepartement();
-				recherche1.traiter(recensement, scanner);
+				recherche1.traiter(scanner);
 				break;
 			case 3:
 				RecherchePopulationRegion recherche2 = new RecherchePopulationRegion();
-				recherche2.traiter(recensement, scanner);
+				recherche2.traiter(scanner);
 				break;
 			case 4:
 				ClassementRegionPopulation recherche3 = new ClassementRegionPopulation();
-				recherche3.traiter(recensement, scanner);
+				recherche3.traiter(scanner);
 				break;
 			case 5:
 				ClassementDepartementPopulation recherche4 = new ClassementDepartementPopulation();
-				recherche4.traiter(recensement, scanner);
+				recherche4.traiter(scanner);
 				break;
 			case 6:
 				ClassementVillePopulationDepartement recherche5 = new ClassementVillePopulationDepartement();
-				recherche5.traiter(recensement, scanner);
+				recherche5.traiter(scanner);
 				break;
 			case 7:
 				ClassementVillePopulationRegion recherche6 = new ClassementVillePopulationRegion();
-				recherche6.traiter(recensement, scanner);
+				recherche6.traiter(scanner);
 				break;
 			case 8:
 				ClassementVillePopulationFrance recherche7 = new ClassementVillePopulationFrance();
-				recherche7.traiter(recensement, scanner);
+				recherche7.traiter(scanner);
 				break;
 			case 9:
 				System.out.println("Vous allez sortir du programme\n");

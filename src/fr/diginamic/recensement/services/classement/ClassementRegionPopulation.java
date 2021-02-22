@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import fr.diginamic.recensement.entites.Recensement;
 import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.MenuService;
 
@@ -29,7 +28,7 @@ public class ClassementRegionPopulation extends MenuService {
 	 * @param scanner
 	 */
 	@Override
-	public void traiter(Recensement recensement, Scanner scanner) {
+	public void traiter(Scanner scanner) {
 		// TODO Auto-generated method stub
 
 		HashMap<String, Integer> classementRegion = new HashMap<String, Integer>();

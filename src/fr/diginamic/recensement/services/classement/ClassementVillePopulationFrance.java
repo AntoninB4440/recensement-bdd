@@ -3,7 +3,6 @@ package fr.diginamic.recensement.services.classement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import fr.diginamic.recensement.entites.Recensement;
 import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.services.MenuService;
 import fr.diginamic.recensement.services.comparateur.ComparatorHabitantDecroissant;
@@ -26,7 +25,7 @@ public class ClassementVillePopulationFrance extends MenuService {
 	 * @param scanner
 	 */
 	@Override
-	public void traiter(Recensement recensement, Scanner scanner) {
+	public void traiter(Scanner scanner) {
 
 		// TODO Auto-generated method stub
 		ArrayList<Ville> villesFrance = new ArrayList<Ville>(recensement.getVilles());

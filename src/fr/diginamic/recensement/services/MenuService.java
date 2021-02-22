@@ -2,8 +2,6 @@ package fr.diginamic.recensement.services;
 
 import java.util.Scanner;
 
-import fr.diginamic.recensement.entites.Recensement;
-
 /**
  * Classe abstraite avec m�thode static g�rant l'affichage des options et
  * m�thode abstraite pour signature
@@ -41,5 +39,5 @@ public abstract class MenuService {
 	 * @param recensement
 	 * @param scanner
 	 */
-	public abstract void traiter(Recensement recensement, Scanner scanner);
+	public abstract void traiter(Scanner scanner);
 }
