@@ -32,15 +32,24 @@ public class IntegrationRecensement {
 			for (String lineFile : linesFile) {
 				String[] villeInfo = lineFile.split(";");
 				String codeRegion = villeInfo[0];
+				String nomRegion = villeInfo[1].replaceAll("'", "''");
 				String codeDepartement = villeInfo[2];
 				String nomCommune = villeInfo[6].replaceAll("'", "''");
 				int populationTotale = Integer.parseInt(villeInfo[9].replace(" ", "").trim());
-				System.out.println("ok ca fonctionne");
+				// System.out.println("ok ca fonctionne")
 
 				statement.executeUpdate(
 						"INSERT INTO ville(code_region,code_departement,nom_ville,population_ville) VALUES('"
 								+ codeRegion + "','" + codeDepartement + "','" + nomCommune + "'," + populationTotale
 								+ ")");
+
+				/*
+				 * statement.executeUpdate(
+				 * "INSERT IGNORE INTO region (code_region,nom_region) VALUES ((SELECT DISTINCT code_region FROM ville),'"
+				 * + nomRegion +
+				 * "')  WHERE code_region AND nom_region NOT IN (SELECT code_region, nom_region FROM region)"
+				 * );
+				 */
 
 			}
 			statement.close();
@@ -48,7 +57,7 @@ public class IntegrationRecensement {
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("Problème de requete" + e.getMessage());
+			System.out.println("Problème de requete : " + e.getMessage());
 		}
 
 	}
